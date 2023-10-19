@@ -1,14 +1,12 @@
-
-#Proboblig01 - The Norwegian Flag:
-
-
+use context essentials2021
 #Figures var:
 
-redrect = rectangle(65,45, "solid", "red")
+redrect = rectangle(65,45, "solid", "red") 
 redrec = rectangle(172, 45, "solid", "red")
 whiteSQ = rectangle(70, 50, "solid", "white")
 whiteREC = rectangle(178,50, "solid", "white")
 background= rectangle(200, 100, "solid", "dark blue")
+#Forklaring: Her navngir jeg en variabel til å være en rektangel med ulike formater
 
 #Images ungathered:
 
@@ -16,9 +14,11 @@ leftup = overlay-align("left", "top", redrect, whiteSQ)
 leftdown = overlay-align("left", "bottom", redrect, whiteSQ)
 rightup = overlay-align("right", "top", redrec, whiteREC)
 rightdown = overlay-align("right", "bottom", redrec, whiteREC)
+#Her bruker jeg "overlay" til å sammensette variablene fra "Figures var" til nye variabler som  til skal brukes senere i koden som deler av det norske flagget. 
 
 #Background:
 back = rectangle(160, 100, "solid", "darkblue")
+#Her formaterer jeg en variabel som skal brukes til bakgrunn for alle de andre variablene i koden under. 
 
 #Flag:
 
@@ -28,3 +28,5 @@ place-image(leftup, 25, 20,
       place-image(rightdown, 160, 80,
         
         back))))
+
+#Her er ferdigproduktet, det norske flagget. I koden har jeg dermed brukt kommandoen "place-image" til å plassere de forskjellige variablene på ulike plasser på "Background" variablen som aksjonerer som bakgrunn, når du trykker "Run" så vil det det CPO fortolker av koden på definisjonssiden til et nytt "produkt" i venstre vindu eller i interaksjonsvinduet. 
