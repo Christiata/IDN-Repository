@@ -1,1 +1,30 @@
 
+#Proboblig01 - The Norwegian Flag:
+
+
+#Figures var:
+
+redrect = rectangle(65,45, "solid", "red")
+redrec = rectangle(172, 45, "solid", "red")
+whiteSQ = rectangle(70, 50, "solid", "white")
+whiteREC = rectangle(178,50, "solid", "white")
+background= rectangle(200, 100, "solid", "dark blue")
+
+#Images ungathered:
+
+leftup = overlay-align("left", "top", redrect, whiteSQ)
+leftdown = overlay-align("left", "bottom", redrect, whiteSQ)
+rightup = overlay-align("right", "top", redrec, whiteREC)
+rightdown = overlay-align("right", "bottom", redrec, whiteREC)
+
+#Background:
+back = rectangle(160, 100, "solid", "darkblue")
+
+#Flag:
+
+place-image(leftup, 25, 20, 
+  place-image(leftdown, 25, 80, 
+    place-image(rightup, 160, 20, 
+      place-image(rightdown, 160, 80,
+        
+        back))))
