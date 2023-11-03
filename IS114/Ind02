@@ -152,6 +152,7 @@ sum(kWh-wealthy-consumer-data-fixed, "energi")
 bar-chart(kWh-wealthy-consumer-data-fixed, "komponent", "energi")
 
 ############## OPPG E - tilleggsfunksjon ####################
+
 include gdrive-sheets
 include data-source
 include shared-gdrive(
@@ -171,10 +172,11 @@ kWh-wealthy-consumer-data =
 
 ## Var for funk. ##
 
-distance-pd= 47.2 # gjennomsnitt distanse (kilde i rapport)
-distance-puf= (distance-pd / 10) * 0.5 #0,5L er gjennomsnittet per mil (kilde i rapport)
+distance-pd = 50 # 50 km er gjennomsnitt distanse (kilde i rapport)
+distance-puf = 12 #12km per liter av bensin/diesel
 energi-puf= 10 #Tatt fra kompendiet (kilde i rapport)
-energi-pd =(distance-pd / distance-puf) * energi-puf
+
+energi-pd = (distance-pd / distance-puf) * energi-puf
 
 
 fun energi-num(str :: String) -> Number:
