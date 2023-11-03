@@ -132,7 +132,7 @@ kWh-wealthy-consumer-data =
   end
 #funksjon for å få energi til nummer: (oppg b)
 
-fun ennergi-num(str :: String) -> Number:
+fun energi-num(str :: String) -> Number:
   cases(Option) string-to-number(str):
     | some(a) => a
     | none => 0
