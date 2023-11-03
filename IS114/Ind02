@@ -150,3 +150,49 @@ sum(kWh-wealthy-consumer-data-fixed, "energi")
 
 #oppg e
 bar-chart(kWh-wealthy-consumer-data-fixed, "komponent", "energi")
+
+############## OPPG E - tilleggsfunksjon ####################
+include gdrive-sheets
+include data-source
+include shared-gdrive(
+"dcic-2021",
+  "1wyQZj_L0qqV9Ekgr9au6RX2iqt2Ga8Ep")
+
+
+ssid = "1RYN0i4Zx_UETVuYacgaGfnFcv4l9zd9toQTTdkQkj7g"
+
+kWh-wealthy-consumer-data =
+  load-table: komponent, energi
+  source: load-spreadsheet(ssid).sheet-by-name("kWh", true)
+    sanitize energi using string-sanitizer #oppg a
+  end
+#funksjon for å få energi til nummer: (oppg b)
+# + funksjon med formel fra kompendium. (Linket of forklart i rapport.)
+
+## Var for funk. ##
+
+distance-pd= 47.2 # gjennomsnitt distanse (kilde i rapport)
+distance-puf= (distance-pd / 10) * 0.5 #0,5L er gjennomsnittet per mil (kilde i rapport)
+energi-puf= 10 #Tatt fra kompendiet (kilde i rapport)
+energi-pd =(distance-pd / distance-puf) * energi-puf
+
+
+fun energi-num(str :: String) -> Number:
+  cases(Option) string-to-number(str):
+    | some(a) => a
+    | none => energi-pd #endring til løsning av oppg e. 
+  end
+where:
+  energi-num("48") is 48
+  energi-num("") is energi-pd
+end
+
+# oppg c
+kWh-wealthy-consumer-data-fixed = transform-column(kWh-wealthy-consumer-data, "energi", energi-num) 
+
+#oppg d
+sum(kWh-wealthy-consumer-data-fixed, "energi")
+
+#oppg e
+bar-chart(kWh-wealthy-consumer-data-fixed, "komponent", "energi")
+ 
