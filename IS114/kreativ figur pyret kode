@@ -1,76 +1,26 @@
-#Creative figure will be Fancy Bear, a russian hacker group relevant in the current Ukrainian war. (Image will be linked!)
+#robot
+include color
+my-grey = color(36, 37, 38, 1)
 
-#https://www.google.com/url?sa=i&url=https%3A%2F%2Fsecurityaffairs.com%2F93121%2Fapt%2Ffancy-bear-anti-doping-attacks.html&psig=AOvVaw3c3LKZb07NnypehADnVPRf&ust=1699620365674000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPCIhbP5toIDFQAAAAAdAAAAABAE
+head= square(100, "solid", "skyblue")
+mouth= rectangle(50, 10, "solid", "black")
+eye= circle(15, "solid", "white")
+ear1= rotate(170, rectangle(40, 5, "solid", "skyblue"))
+ear2= rotate(25, rectangle(40, 5, "solid", "skyblue"))
+bg= rectangle(200, 200, "solid", my-grey)
 
-#HAT
-hatin= rotate(5, rectangle(148, 68, "solid", "brown"))
-outhat= rotate(5, rectangle(150, 70, "solid", "black"))
-hatout= overlay(hatin, outhat)
-rothat= rotate(5, hatout)
-
-resta=rotate(5, star(25, "solid", "red"))
-  yelsta= rotate(5, star(27, "outline", "yellow"))
-comstar= overlay(resta, yelsta)
-
-#Head
-bearHead= circle(100, "solid", "saddle-brown")
-ear1= rotate(65,
-  triangle(50, "solid", "saddle-brown"))
-ear2= rotate(60,
-  triangle(48, "solid", "saddle-brown"))
-innerear1= rotate(65,
-  triangle(20, "solid", "brown"))
-  innerear2= rotate(60,
-    triangle(20, "solid", "brown"))
-
-#Face vars
-botul= rotate(10, ellipse(100, 130, "solid", "brown"))
-limba= rotate(15, ellipse(40, 50, "solid", "red"))
-gura= rotate(10, ellipse(80, 60, "solid", "black"))
-nas= rotate(10, ellipse(20, 25, "solid", "black"))
-eye1= ellipse(15,10, "solid", "black")
-eye2=ellipse(15,10, "solid", "black")
-eye1bg= rotate(120, ellipse(30, 40, "solid", "brown"))
-eye2bg= rotate(70, ellipse(30, 40, "solid", "brown"))
-  
-# #Face construct
-guraUrs= overlay-align("center", "bottom", limba, gura)
-botulUr= overlay-align("center", "top", nas, botul)
-botulUrs= overlay-align("center", "center", guraUrs, botulUr)
-eye1urs= overlay-align("center", "center", eye1, eye1bg)
-eye2urs=overlay-align("center", "center", eye2, eye2bg)
-  
-#Background
-back= rectangle(300, 250, "solid", "bisque")
-
-#Build
-put-image( 
-  botulUrs, 150, 50,
-  put-image(
-    eye1urs, 110, 110,
-    put-image(
-      eye2urs, 175, 115,
-    put-image(
-      innerear1, 52, 140,
-      put-image(
-        innerear2, 243, 140,
- put-image(
-      ear1, 52, 140, 
-  put-image(
-    comstar, 135, 190,
 put-image(
-                rothat, 140, 190,
-  
-put-image(bearHead, 150, 90, 
-
+  ear1, 35, 140,
+  put-image(
+    ear2, 160, 140,
+  put-image(
+  mouth, 100, 75,
     put-image(
-        ear2, 243, 140, 
-     
+    eye, 75, 120,
+      put-image(
+      eye, 120, 120, 
+      put-image(
+        head, 100, 100, 
 
-                    back))))))))))
-
-
-
-
-
-
+  
+            bg))))))
